@@ -1,0 +1,72 @@
+<html>
+  <body>
+
+    <!-- What the onfocus attribute you see below does: -->
+    <!-- When the input field gets focus, replace its current value with an empty string -->
+    <form onclick="newTask(event);return false">
+      <input type="text" onfocus="this.value=''" id="task">
+      <input type="submit">
+    </form>
+    <p id="text"></p>
+
+  </body>
+  <script>
+    
+    class Tasks{
+      constructor() {
+        this._todos = []
+      }
+
+      get todos(){
+        return this._todos
+      }
+
+      set taskTitle(text){
+        if (isNaN(text)){
+          this._todos = text;
+        } else {
+          console.log('You must assign a string to your task title');
+        }
+      }
+
+      //Add a method called addTasks with a parameter of taskName
+      //create a variable within this function that adds the value of the parameter method into the returned array of the task getter
+
+      addTasks(value) {
+       
+      let addtoArray = this._todos.push(value);
+     
+     }
+    }
+
+   //END OF CLASS
+
+
+
+      //Call the addTask method and set its argument to the "value" variable provided above
+      //Add your code below
+  //Output your object getter of task as an innerHtml of your empty p element
+      //Add your code below
+ 
+
+      //INSTANTIATION
+
+function newTask(event) {
+  event.preventDefault();
+  let value = document.getElementById("task").value;
+  const myTask = new Tasks(value);
+  myTask.addTasks(value);
+
+console.log(myTask.todos)
+
+ 
+let taskArray = document.getElementById("text").innerHTML += myTask.todos +"<br>";
+  
+}
+
+
+
+    
+
+  </script>
+</html>
