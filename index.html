@@ -11,7 +11,8 @@
 
   </body>
   <script>
-    
+    // let taskArray = []
+
     class Tasks{
       constructor() {
         this._todos = []
@@ -31,13 +32,15 @@
 
       //Add a method called addTasks with a parameter of taskName
       //create a variable within this function that adds the value of the parameter method into the returned array of the task getter
-
       addTasks(value) {
        
-      let addtoArray = this._todos.push(value);
-     
-     }
+       let addtoArray = this._todos.push(value);
+      
+      }
+      
     }
+    
+  
 
    //END OF CLASS
 
@@ -51,16 +54,16 @@
 
       //INSTANTIATION
 
+
+
 function newTask(event) {
   event.preventDefault();
-  let value = document.getElementById("task").value;
+  let value = document.getElementById("task").value; 
   const myTask = new Tasks(value);
+  
   myTask.addTasks(value);
-
-console.log(myTask.todos)
-
- 
-let taskArray = document.getElementById("text").innerHTML += myTask.todos +"<br>";
+  console.log(myTask.todos)
+  let taskArray = document.getElementById("text").innerHTML += myTask.todos +"<br>";
   
 }
 
