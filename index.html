@@ -21,12 +21,17 @@
       return this._todos
     }
 
-    set taskTitle(text) {
-      if (isNaN(text)) {
-        this._todos = text;
-      } else {
-        console.log('You must assign a string to your task title');
-      }
+    //set taskTitle(text) {
+    // if (isNaN('string')) {
+    //this._todos = 'string';
+    // } else {
+    // console.log('You must assign a string to your task title');
+    // }
+
+    set todos(value) {
+      if (typeof this._todos !== 'number') { this._todos = text }
+      else if (typeof this._todos === 'number') { console.log("This shouldn't be a number") }
+      return;
     }
 
     //Add a method called addTasks with a parameter of taskName
@@ -50,10 +55,11 @@
 
   function newTask(event) {
     event.preventDefault();
-     let value = document.getElementById("task").value;
-      myTask.addTasks(value);
-       console.log(myTask.todos);
-        let newTasks = document.getElementById("text").innerHTML += value + "<br>";
+    let value = document.getElementById("task").value;
+    myTask.addTasks(value);
+    console.log(myTask.todos);
+    document.getElementById("text").innerHTML += value + "<br>";
+
   }
 
 </script>
